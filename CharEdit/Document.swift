@@ -1,6 +1,6 @@
 //
 //  Document.swift
-//  CharEdit2
+//  CharEdit
 //
 //  Created by Adrian Thomas Clinansmith on 2020-08-19.
 //  Copyright © 2020 Adrian Thomas Clinansmith. All rights reserved.
