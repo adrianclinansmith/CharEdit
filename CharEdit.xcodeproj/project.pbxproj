@@ -12,9 +12,9 @@
 		6911460424ED809300F7874E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6911460324ED809300F7874E /* Document.swift */; };
 		6911460624ED809300F7874E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6911460524ED809300F7874E /* Assets.xcassets */; };
 		6911460924ED809300F7874E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6911460724ED809300F7874E /* Main.storyboard */; };
-		693846112516910C008D5D23 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693846102516910C008D5D23 /* Window.swift */; };
 		6938461325169237008D5D23 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6938461225169237008D5D23 /* TextView.swift */; };
 		69622D2224F00207005BF191 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69622D2124F00207005BF191 /* Content.swift */; };
+		697B3A482554CCDE00B0200C /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B3A472554CCDE00B0200C /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +26,9 @@
 		6911460824ED809300F7874E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6911460A24ED809300F7874E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6911460B24ED809300F7874E /* CharEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CharEdit.entitlements; sourceTree = "<group>"; };
-		693846102516910C008D5D23 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		6938461225169237008D5D23 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		69622D2124F00207005BF191 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		697B3A472554CCDE00B0200C /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				691145FF24ED809300F7874E /* AppDelegate.swift */,
-				693846102516910C008D5D23 /* Window.swift */,
+				697B3A472554CCDE00B0200C /* WindowController.swift */,
 				6911460124ED809300F7874E /* ViewController.swift */,
 				6938461225169237008D5D23 /* TextView.swift */,
 				6911460324ED809300F7874E /* Document.swift */,
@@ -102,7 +102,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Adrian Thomas Clinansmith";
 				TargetAttributes = {
 					691145FB24ED809300F7874E = {
@@ -146,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6911460224ED809300F7874E /* ViewController.swift in Sources */,
-				693846112516910C008D5D23 /* Window.swift in Sources */,
+				697B3A482554CCDE00B0200C /* WindowController.swift in Sources */,
 				6911460024ED809300F7874E /* AppDelegate.swift in Sources */,
 				6938461325169237008D5D23 /* TextView.swift in Sources */,
 				6911460424ED809300F7874E /* Document.swift in Sources */,
@@ -194,6 +194,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -254,6 +255,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -286,6 +288,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CharEdit/CharEdit.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CharEdit/Info.plist;
@@ -304,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CharEdit/CharEdit.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CharEdit/Info.plist;

@@ -9,13 +9,14 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSTextViewDelegate, TextViewDelegate {
-
+class ViewController: NSViewController, TextViewDelegate {
+   
    @IBOutlet var textView: TextView!
+   
+   //MARK: NSViewController Methods
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      self.textView.textViewDelegate = self
       self.textView.usesFindBar = true
       self.textView.isIncrementalSearchingEnabled = true
    }
@@ -29,38 +30,34 @@ class ViewController: NSViewController, NSTextViewDelegate, TextViewDelegate {
       }
    }
    
-   //MARK: NSTextView Delegate
+   //MARK: TextView Delegate
 
    func textDidChange(_ notification: Notification) {
       self.updateModel()
    }
    
-   //MARK: TextView Delegate
-   
-   func textViewDidReceiveOptCmdArrow(_ textView: TextView, pressedArrow arrow: String) {
-      self.incrementChars(shouldDecrement: arrow == "down")
+   func textViewDidReceiveOptCmdArrow(_ textView: NSTextView, pressedArrow arrow: String) {
+      let segment = NSSegmentedControl()
+      segment.selectedSegment = arrow == "down" ? 0 : 1;
+      self.addToChars(segment)
    }
    
    //MARK: IBActions
    
    @IBAction func addToChars(_ sender: NSSegmentedControl) {
-      self.incrementChars(shouldDecrement: sender.selectedSegment == 0)
-   }
-   
-   //MARK: Helper Methods
-   
-   func incrementChars(shouldDecrement decrement: Bool = false) {
       guard let selectedRange = self.textView.selectedRanges.first?.rangeValue else { return }
       guard selectedRange.length > 0 else { return }
       guard let stringRange = Range(selectedRange, in: self.textView.string) else { return }
       
-      let newSubstring = String(self.textView.string[stringRange].unicodeScalars.map {
-         Character(UnicodeScalar(decrement ? $0.value-1 : $0.value+1)!)
-      })
+      let decrement = sender.selectedSegment == 0
+      let substring = String(self.textView.string[stringRange])
+      let newSubstring = String(substring.unicodeScalars.map { Character(UnicodeScalar(decrement ? $0.value-1 : $0.value+1)!) })
       self.textView.string.replaceSubrange(stringRange, with: newSubstring)
       self.textView.setSelectedRange(selectedRange)
       self.updateModel()
    }
+   
+   //MARK: Helper Methods
    
    func updateModel() {
       guard let content = self.representedObject as? Content else { return }
